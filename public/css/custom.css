@@ -1,0 +1,48 @@
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #F5F5F5;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+.header { 
+    padding: 10px;
+    background-color: #F5F5F5;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+
+.toplink {
+    padding: 0 12px;
+    font-weight: 700;
+    color: chocolate;
+}
+
+.toplink:hover {
+    color: black;
+}
+
+.mycontainer {
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+.menu {
+    text-align: right;
+}
+@media only screen and (min-width: 600px) {
+    .mycontainer {
+        padding-left: 60px;
+    }
+    .logo { 
+        padding-left: 60px;
+    }
+
+    .menu {
+        padding-right: 50px;
+    }    
+
+  }

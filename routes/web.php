@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WeatherdataController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,12 +16,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('/current', [WeatherdataController::class, 'index'])->name('current');
+Route::get('/list', [WeatherdataController::class, 'show'])->name('list');
+Route::post('/showData', [WeatherdataController::class, 'showData'])->name('showData');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/aboutus', function () {
+    return view('aboutus');
+})->middleware(['auth', 'verified'])->name('aboutus');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
